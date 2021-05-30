@@ -15,7 +15,8 @@ namespace MovieU.Controllers
         
         public IActionResult Index()
         {
-            return View();
+            var movies  = holder.TvShows.ToList();
+            return View(movies);
         }
         
         public IActionResult show(int id)
