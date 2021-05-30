@@ -18,7 +18,7 @@ namespace MovieU.Controllers
             holder.Dispose();
         }
 
-        public IActionResult gitMovie(int id)
+        public IActionResult getMovie(int id)
         {
             return View();
         }
