@@ -11,11 +11,10 @@ namespace MovieU.Controllers
         // GET
         private ApplicationDbContext holder;
 
-        public MoviesController()
+        public MoviesController(ApplicationDbContext db)
         {
-            holder = new ApplicationDbContext(null);
+            holder = db;
         }
-
         protected override void Dispose(bool disposing)
         {
             holder.Dispose();
