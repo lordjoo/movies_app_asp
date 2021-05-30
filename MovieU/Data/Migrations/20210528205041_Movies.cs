@@ -23,11 +23,6 @@ namespace MovieU.Data.Migrations
                 {
                     table.PrimaryKey("PK_Movies", x => x.Id);
                 });
-            migrationBuilder.InsertData(
-                table: "Movies",
-                columns: new[] {"Name", "Photo", "StreamUrl"},
-                values: new object[] {"Shreck!", "p/shreck.jpg", "Https: //ok.ru"}
-                );
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
