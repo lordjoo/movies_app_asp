@@ -20,8 +20,5 @@ namespace MovieU.Models
         [StringLength(255)]
         public string StreamUrl { get; set; }
         
-        [Display(Name = "Release Date")]
-        public DateTime ReleaseDate { get; set; }
-        
     }
 }

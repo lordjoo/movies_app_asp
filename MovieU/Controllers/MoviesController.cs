@@ -15,11 +15,7 @@ namespace MovieU.Controllers
         {
             holder = db;
         }
-        protected override void Dispose(bool disposing)
-        {
-            holder.Dispose();
-        }
-
+        
         public IActionResult getMovie(int id)
         {
             var movies = holder.Movies.SingleOrDefault(x => x.Id == id);
