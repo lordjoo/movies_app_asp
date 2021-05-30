@@ -15,13 +15,13 @@
                 <div class="col-xl-3 col-lg-4">
                     <div class="movie-details-img">
                         <img src=@Model.Photo alt="">
-                        <a href=@Model.StreamUrl class="popup-video"><img src="/img/images/play_icon.png" alt=""></a>
+                        @* <a href=@Model.StreamUrl class="popup-video"><img src="/img/images/play_icon.png" alt=""></a> *@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-8">
                     <div class="movie-details-content">
                         <h5>New Episodes</h5>
-                        <h2>The Easy <span>Reach</span></h2>
+                        <h2>@Model.Name <span>Episode @Model.Episode</span></h2>
                         <div class="banner-meta">
                             <ul>
                                 <li class="quality">
@@ -31,10 +31,6 @@
                                 <li class="category">
                                     <a href="#">Romance,</a>
                                     <a href="#">Drama</a>
-                                </li>
-                                <li class="release-time">
-                                    <span><i class="far fa-calendar-alt"></i> 2021</span>
-                                    <span><i class="far fa-clock"></i> 128 min</span>
                                 </li>
                             </ul>
                         </div>
@@ -50,7 +46,7 @@
                                     <h6>Prime Video</h6>
                                     <span>Streaming Channels</span>
                                 </li>
-                                <li class="watch"><a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="btn popup-video"><i class="fas fa-play"></i> Watch Now</a></li>
+                                <li class="watch"><a href=@Model.StreamUrl class="btn popup-video"><i class="fas fa-play"></i> Watch Now</a></li>
                             </ul>
                         </div>
                     </div>
