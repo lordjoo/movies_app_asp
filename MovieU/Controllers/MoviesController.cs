@@ -16,11 +16,11 @@ namespace MovieU.Controllers
             holder = db;
         }
         
-        public IActionResult getMovie(int id)
+        public IActionResult show(int id)
         {
             var movies = holder.Movies.SingleOrDefault(x => x.Id == id);
             if (movies == null) return NotFound();
-            return View(movies);
+            return View("~/Views/Shared/getItem.cshtml",movies);
         }
         public IActionResult Index()
         {
