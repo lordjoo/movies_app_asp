@@ -28,7 +28,7 @@ namespace MovieU.Data.Migrations
         {
             
             migrationBuilder.DropTable(
-                name: "TvShow");
+                name: "TvShows");
         }
     }
 }
