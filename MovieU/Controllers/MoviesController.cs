@@ -1,5 +1,8 @@
+using System.Linq;
+// using System.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using MovieU.Data;
+
 
 namespace MovieU.Controllers
 {
@@ -8,10 +11,10 @@ namespace MovieU.Controllers
         // GET
         private ApplicationDbContext holder;
 
-        // public MoviesController()
-        // {
-        //     holder = new ApplicationDbContext();
-        // }
+        public MoviesController()
+        {
+            holder = new ApplicationDbContext(null);
+        }
 
         protected override void Dispose(bool disposing)
         {
@@ -20,12 +23,15 @@ namespace MovieU.Controllers
 
         public IActionResult getMovie(int id)
         {
-            return View();
+            var movies = holder.Movies.SingleOrDefault(x => x.Id == id);
+            if (movies == null) return NotFound();
+            return View(movies);
         }
         public IActionResult Index()
         {
-            
-            return View();
+            var movies  = holder.Movies.ToList();
+            return View(movies);
         }
+         
     }
 }

@@ -9,6 +9,7 @@ namespace MovieU.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        public DbSet<Movies> Movies { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
