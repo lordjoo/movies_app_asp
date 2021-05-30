@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MovieU.Models
 {
-    public class TvShow
+    public class TvShows
     {
         public int Id { get; set; }
         
