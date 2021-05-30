@@ -18,9 +18,10 @@ namespace MovieU.Controllers
         
         public IActionResult show(int id)
         {
+            // this will be applied in getItem view ... 
             var movies = holder.Movies.SingleOrDefault(x => x.Id == id);
             if (movies == null) return NotFound();
-            return View("~/Views/Shared/getItem.cshtml",movies);
+            return View(movies);
         }
         public IActionResult Index()
         {

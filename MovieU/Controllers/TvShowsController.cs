@@ -23,7 +23,7 @@ namespace MovieU.Controllers
         {
             var show = holder.TvShows.SingleOrDefault(x => x.Id == id);
             if (show == null) return NotFound();
-            return View("~/Views/Shared/getItem.cshtml",show);
+            return View(show);
         }
         
     }
