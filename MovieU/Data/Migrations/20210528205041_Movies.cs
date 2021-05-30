@@ -24,7 +24,6 @@ namespace MovieU.Data.Migrations
                     table.PrimaryKey("PK_Movies", x => x.Id);
                 });
         }
-
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
