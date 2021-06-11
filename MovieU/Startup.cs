@@ -62,6 +62,7 @@ namespace MovieU
 
             app.UseEndpoints(endpoints =>
             {
+                // base routes
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
