@@ -5,39 +5,54 @@
     Layout = "~/Views/Shared/_Layout_dash.cshtml";
 }
 
-<h1>Details</h1>
+<div class="app-title d-flex align-items-center justify-content-between">
+    <div>
+        <h1 class="mb-0"><i class="fa fa-film"></i> @Model.Name Episode @Model.Episode</h1>
+    </div>
+</div>
 
-<div>
-    <h4>TvShows</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Photo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Photo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StreamUrl)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StreamUrl)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Episode)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Episode)
-        </dd>
-    </dl>
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <div class="tile-body">
+                
+                <dl class="row">
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Photo)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Photo)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.StreamUrl)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.StreamUrl)
+                    </dd>
+                    <dt class = "col-sm-2">
+                        @Html.DisplayNameFor(model => model.Episode)
+                    </dt>
+                    <dd class = "col-sm-10">
+                        @Html.DisplayFor(model => model.Episode)
+                    </dd>
+                </dl>
+                <a asp-action="Edit" asp-route-id="@Model.Id"> 
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-pencil-square"></i> Edit
+                    </button>
+                    </a>
+                    <a class="btn btn-secandry" asp-action="Index">Close</a>
+            </div>
+        </div>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+
+
+

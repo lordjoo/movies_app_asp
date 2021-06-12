@@ -29,8 +29,9 @@
                                     <span>hd</span>
                                 </li>
                                 <li class="category">
-                                    <a href="#">Romance,</a>
-                                    <a href="#">Drama</a>
+                                    @foreach( var tag in @Model.Tags.Split(',') ) {
+                                        <a href="#">@tag  </a>
+                                    }
                                 </li>
                             </ul>
                         </div>

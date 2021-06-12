@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-8">
                     <div class="movie-details-content">
-                        <h5>New Episodes</h5>
+                        <h5>New Movies</h5>
                         <h2>@Model.Name</h2>
                         <div class="banner-meta">
                             <ul>
@@ -27,8 +27,9 @@
                                     <span>hd</span>
                                 </li>
                                 <li class="category">
-                                    <a href="#">Romance,</a>
-                                    <a href="#">Drama</a>
+                                    @foreach( var tag in @Model.Tags.Split(',') ) {
+                                        <a href="#">@tag  </a>
+                                    }
                                 </li>
                             </ul>
                         </div>

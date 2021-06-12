@@ -29,7 +29,7 @@
                 </li>
                 <li>
                     <form id="logout-asp" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})" class="d-none"></form>
-                    <a onclick="document.getElementById('logout-asp').submit()" class="dropdown-item" href=""><i class="fa fa-sign-out fa-lg"></i> Logout</a>
+                    <a onclick="document.getElementById('logout-asp').submit()" class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a>
                 </li>
             </ul>
         </li>
