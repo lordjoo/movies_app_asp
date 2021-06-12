@@ -24,7 +24,6 @@ namespace MovieU.Controllers
             int rand_conditioning = rand.Next(0, 2);
             if ( rand_conditioning == 1)
             {
-                Console.WriteLine("IF !!");
                 var idx = rand.Next(movies.Count());
                 foreach (var element in movies)
                 {
@@ -40,7 +39,6 @@ namespace MovieU.Controllers
             }
             else
             {
-                Console.WriteLine("Else !!");
                 var idx = rand.Next(tvshows.Count());
                 foreach (var element in tvshows)
                 {

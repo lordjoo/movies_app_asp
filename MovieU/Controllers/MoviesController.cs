@@ -21,6 +21,7 @@ namespace MovieU.Controllers
             // this will be applied in getItem view ... 
             var movies = holder.Movies.SingleOrDefault(x => x.Id == id);
             if (movies == null) return NotFound();
+            ViewData["movies"] =  holder.Movies.OrderByDescending(t => t.Id).Take(4);
             return View(movies);
         }
         public IActionResult Index()

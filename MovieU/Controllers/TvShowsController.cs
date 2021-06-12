@@ -23,6 +23,7 @@ namespace MovieU.Controllers
         {
             var show = holder.TvShows.SingleOrDefault(x => x.Id == id);
             if (show == null) return NotFound();
+            ViewData["tvShows"] =  holder.TvShows.OrderByDescending(t => t.Id).Take(4);
             return View(show);
         }
         
