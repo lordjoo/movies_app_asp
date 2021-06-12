@@ -25,7 +25,7 @@
             </a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
                 <li>
-                    <a class="dropdown-item" id="change-password" asp-page="./ChangePassword"><i class="fa fa-lock fa-lg"></i> Change Password</a>
+                    <a class="dropdown-item" id="change-password" asp-page="/ChangePassword"><i class="fa fa-lock fa-lg"></i> Change Password</a>
                 </li>
                 <li>
                     <form id="logout-asp" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})" class="d-none"></form>
@@ -46,10 +46,21 @@
     </div>
     <ul class="app-menu">
         <li>
-            <a class="app-menu__item" href="dashboard.html">
+            <a class="app-menu__item" href="/Identity/Account/Manage">
                 <i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span>
             </a>
         </li>
+        <li>
+            <a class="app-menu__item" href="/AdminMovies">
+                <i class="app-menu__icon fa fa-video-camera"></i><span class="app-menu__label">Movies</span>
+            </a>
+        </li>
+        <li>
+            <a class="app-menu__item" href="/AdminTvShows">
+                <i class="app-menu__icon fa fa-film"></i><span class="app-menu__label">TV Shows</span>
+            </a>
+        </li>
+
 
     </ul>
 </aside>

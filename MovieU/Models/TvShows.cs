@@ -21,6 +21,10 @@ namespace MovieU.Models
         
         [Required]
         public int Episode { get; set; }
-        
+
+        [Required]
+        [StringLength(255)]
+        public string Tags { get; set; }
+
     }
 }

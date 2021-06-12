@@ -11,11 +11,14 @@ namespace MovieU.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-        
+
         [Required]
         [StringLength(255)]
         public string Photo { get; set; }
-        
+        [Required]
+        [StringLength(255)]
+        public string Tags { get; set; }
+
         [Required]
         [StringLength(255)]
         public string StreamUrl { get; set; }

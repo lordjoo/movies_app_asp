@@ -16,6 +16,7 @@ namespace MovieU.Data.Migrations
                     Episode = table.Column<int>(type: "INTEGER", nullable: false),
                     Name = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     Photo = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
+                    Tags = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false),
                     StreamUrl = table.Column<string>(type: "TEXT", maxLength: 255, nullable: false)
                 },
                 constraints: table =>

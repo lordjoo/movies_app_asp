@@ -12,22 +12,22 @@ using MovieU.Models;
 namespace MovieU.Controllers
 {
     [Authorize]
-    public class AdminMoviesController : Controller
+    public class AdminTvShowsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public AdminMoviesController(ApplicationDbContext context)
+        public AdminTvShowsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: AdminMovies
+        // GET: AdminTvShows
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movies.ToListAsync());
+            return View(await _context.TvShows.ToListAsync());
         }
 
-        // GET: AdminMovies/Details/5
+        // GET: AdminTvShows/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,39 +35,39 @@ namespace MovieU.Controllers
                 return NotFound();
             }
 
-            var movies = await _context.Movies
+            var tvShows = await _context.TvShows
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (movies == null)
+            if (tvShows == null)
             {
                 return NotFound();
             }
 
-            return View(movies);
+            return View(tvShows);
         }
 
-        // GET: AdminMovies/Create
+        // GET: AdminTvShows/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: AdminMovies/Create
+        // POST: AdminTvShows/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Photo,StreamUrl")] Movies movies)
+        public async Task<IActionResult> Create([Bind("Id,Name,Photo,StreamUrl,Episode")] TvShows tvShows)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movies);
+                _context.Add(tvShows);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(movies);
+            return View(tvShows);
         }
 
-        // GET: AdminMovies/Edit/5
+        // GET: AdminTvShows/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -75,22 +75,22 @@ namespace MovieU.Controllers
                 return NotFound();
             }
 
-            var movies = await _context.Movies.FindAsync(id);
-            if (movies == null)
+            var tvShows = await _context.TvShows.FindAsync(id);
+            if (tvShows == null)
             {
                 return NotFound();
             }
-            return View(movies);
+            return View(tvShows);
         }
 
-        // POST: AdminMovies/Edit/5
+        // POST: AdminTvShows/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Photo,StreamUrl")] Movies movies)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Photo,StreamUrl,Episode")] TvShows tvShows)
         {
-            if (id != movies.Id)
+            if (id != tvShows.Id)
             {
                 return NotFound();
             }
@@ -99,12 +99,12 @@ namespace MovieU.Controllers
             {
                 try
                 {
-                    _context.Update(movies);
+                    _context.Update(tvShows);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MoviesExists(movies.Id))
+                    if (!TvShowsExists(tvShows.Id))
                     {
                         return NotFound();
                     }
@@ -115,10 +115,10 @@ namespace MovieU.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(movies);
+            return View(tvShows);
         }
 
-        // GET: AdminMovies/Delete/5
+        // GET: AdminTvShows/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -126,30 +126,30 @@ namespace MovieU.Controllers
                 return NotFound();
             }
 
-            var movies = await _context.Movies
+            var tvShows = await _context.TvShows
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (movies == null)
+            if (tvShows == null)
             {
                 return NotFound();
             }
 
-            return View(movies);
+            return View(tvShows);
         }
 
-        // POST: AdminMovies/Delete/5
+        // POST: AdminTvShows/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movies = await _context.Movies.FindAsync(id);
-            _context.Movies.Remove(movies);
+            var tvShows = await _context.TvShows.FindAsync(id);
+            _context.TvShows.Remove(tvShows);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MoviesExists(int id)
+        private bool TvShowsExists(int id)
         {
-            return _context.Movies.Any(e => e.Id == id);
+            return _context.TvShows.Any(e => e.Id == id);
         }
     }
 }

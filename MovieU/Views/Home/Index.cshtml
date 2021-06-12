@@ -1,7 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@foreach (var m in (List<Movies>) ViewData["movies"])
+{
+    
+}
 <main>
     <!-- banner-area -->
         <section class="banner-area banner-bg" data-background="/img/banner/banner_bg01.jpg">

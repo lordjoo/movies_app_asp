@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MovieU.Models.TvShows>
+
+@{
+    ViewData["Title"] = "Manage Tv Shows";
+    Layout = "~/Views/Shared/_Layout_dash.cshtml";
+}
+
+
+<div class="app-title d-flex align-items-center justify-content-between">
+    <div>
+        <h1 class="mb-0"><i class="fa fa-film"></i> TV Shows</h1>
+    </div>
+    <a asp-action="Create" class="btn btn-success"><span class="fa fa-plus"></span>Add</a>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <div class="tile-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Photo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StreamUrl)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Episode)
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Photo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StreamUrl)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Episode)
+                            </td>
+                            <td>
+                                <div class="d-flex">
+                                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
+                                    <a class="btn btn-secondary btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a> 
+                                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
